@@ -1,0 +1,188 @@
+body{
+    background-color: #ECF5FE;
+}
+
+.text_plain{
+    font: normal normal bold 16px Hancom Gothic;
+    color: #8B8B8B;
+}
+
+/* 메뉴 바 */
+.menu_div{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0; 
+
+    background-color: rgba(250, 250, 250, 0.8);
+    padding: 15; /* 메뉴 바 위아래 크기 */
+
+    text-align: center;
+    padding-right: 10; 
+    padding-left: 10; 
+}
+
+.menu_logo_N_text{
+    font-size: 16px; 
+    display: inline;
+}
+
+.menu_logo{
+    width: 35;
+    vertical-align: middle;
+}
+
+.menu_text{
+    font-size: 16px; 
+    text-decoration: none;
+    padding-right: 25;
+}
+
+/* 제목 */
+.title_image{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 175px; /*제목 위쪽 간격*/
+}
+
+/* 구름 */
+.main_cloud1{
+    width: 150;
+    position:absolute;
+    top: 30%;
+    left: 20%;
+}
+.main_cloud2{
+    width: 400;
+    position:absolute;
+    top: 60%;
+    left: 10%;
+}
+.main_cloud3{
+    width: 500;
+    position:absolute;
+    top: 50%;
+    right: 10%;
+}
+
+/* 정보 */
+.info_title{
+    font-size: 22px; 
+    text-align: center;
+    margin-top: 420px; /* 정보 간격 */
+    margin-bottom: 15px;
+}
+
+.info_rectangle{
+    font-size: 13px;
+    width: 650px; 
+    height: 202px;
+    margin:auto;
+
+    background: #FFFFFF;
+    border: 3px solid #6E85B6;
+    border-radius: 20px;
+    
+    padding-left: 40px;
+    padding-top: 35px;
+}
+
+.button{
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+
+    width: 214px;
+    height: 57px;
+
+    margin:auto;
+
+    background: #6E85B6;
+    border-radius: 100px;
+}
+
+/* output 상자 */
+
+#AIOutput{
+    font-size: 13px;
+    width: 650px; 
+    height: 150px;
+    margin:auto;
+    display: block;
+
+    background: #FFFFFF;
+    border: 3px solid #6E85B6;
+    border-radius: 20px;
+    
+    padding-left: 40px;
+    padding-top: 35px;
+}
+
+/* input 상자 */
+#UserInputBox{
+    font-size: 13px;
+    width: 600px; 
+    height: 150px;
+    margin:auto;
+
+    position: relative;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+
+    background: #FFFFFF;
+    border: 3px solid #6E85B6;
+    border-radius: 20px;
+    
+    padding: 40px 40px;
+    padding-top: 35px;
+
+
+}
+
+#UserInput{
+    font-size: 13px;
+
+    margin:auto;
+
+    position: relative;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+
+    background: #FFFFFF;
+    border: white;
+
+    padding: 40px 40px;
+    padding-top: 35px;
+
+
+}
+
+form textarea:focus{
+    outline: none;
+}
+
+textarea::placeholder {
+    color: #cecece;  
+    font-style: italic; 
+    font-weight: normal;
+}
+
+#send_button{
+    position: absolute; /* 절대 위치 설정 */
+    bottom: 10px;
+    right: 10px;
+    
+  }
+
+
+
+/* 캐릭터 */
+.character{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
