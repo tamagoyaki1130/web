@@ -154,6 +154,8 @@ body{
 
     background: #FFFFFF;
     border: white;
+    overflow:visible;
+    overflow-y: scroll;
 
     padding: 40px 40px;
     padding-top: 35px;
@@ -161,8 +163,16 @@ body{
 
 }
 
+
+.scroll::-webkit-scrollbar {
+    display: none;
+  }
+
 form textarea:focus{
     outline: none;
+}
+form textarea{
+    resize: none;   
 }
 
 textarea::placeholder {
@@ -172,7 +182,7 @@ textarea::placeholder {
 }
 
 #send_button{
-    position: absolute; /* 절대 위치 설정 */
+    position: relative; /* 절대 위치 설정 */
     bottom: 10px;
     right: 10px;
     
