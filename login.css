@@ -14,6 +14,7 @@ img{
 
 .input-text input {
     display: block;
+    padding-left: 30px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
     border-radius: 41px;
