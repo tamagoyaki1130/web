@@ -11,6 +11,7 @@ img{
 .input-text {
     text-align: center;
 }
+
 .input-text input {
     display: block;
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -19,18 +20,18 @@ img{
     opacity: 1;
 }
 .input-1 {
-    position: absolute;
+    /* position: absolute;
     top: 451px;
-    margin-left: 692px;
+    margin-left: 692px; */
     width: 536px;
     height: 60px;
     
 }
 
 .input-2 {
-    position: absolute;
+    /* position: absolute;
     top: 531px;
-    left: 692px;
+    left: 692px; */
     width: 536px;
     height: 60px;
     
@@ -48,9 +49,10 @@ img{
 } */
 
 .blue-button {
-    position: absolute;
+    /* position: absolute;
     top: 679px;
-    left: 968px;
+    left: 968px; */
+    margin-top: 20px;
     width: 258px;
     height: 64px;
     background: #6D85B7 0% 0% no-repeat padding-box;
@@ -64,25 +66,10 @@ img{
 }
 
 .white-button {
-    position:absolute;
+    /* position:absolute;
     top: 679px;
-    left: 692px;
-    width: 260px;
-    height: 64px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #707070;
-    opacity: 1;
-    color: #000000;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.white-button {
-    position:absolute;
-    top: 679px;
-    left: 692px;
+    left: 692px; */
+    margin-top: 20px;
     width: 260px;
     height: 64px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
