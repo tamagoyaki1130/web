@@ -69,7 +69,7 @@ body{
 
 /* 정보 */
 .info_title{
-    font-size: 22px; 
+    font-size: 24px; 
     text-align: center;
     margin-top: 420px; /* 정보 간격 */
     margin-bottom: 15px;
@@ -90,14 +90,19 @@ body{
 }
 
 .button{
-    font-size: 16px;
+    font-size: 13px;
     color: #FFFFFF;
     text-decoration: none;
-
-    width: 214px;
-    height: 57px;
-
+    padding: 15px 8px 15px 8px;
+    display: block;
     margin:auto;
+    text-align: center;
+
+    width: 150;
+
+    display: block;
+    margin:auto;
+    text-align: center;
 
     background: #6E85B6;
     border-radius: 100px;
@@ -195,4 +200,55 @@ textarea::placeholder {
     display: block;
     margin-right: auto;
     margin-left: auto;
+}
+
+
+#left_info{
+    background-color: #ECF5FE;
+    width:30%;
+    padding-left: 15%;
+    padding-right: 5%;
+}
+
+.Yinfo-main-title{
+    font: normal normal bold 24px Hancom Gothic;
+    font-weight: bold;
+    color: #8B8B8B;
+    margin-bottom: 20px;
+}
+
+.Yinfo-title{
+    font: normal normal bold 14px Hancom Gothic;
+    font-weight: bold;
+    color: #8B8B8B;
+    margin-bottom: 10px;
+}
+
+.Yinfo-text{
+    font: normal normal bold 13px Hancom Gothic;
+    font-weight: normal;
+    color: #8B8B8B;
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+
+.button2{
+    font-size: 13px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 15px 8px 15px 8px;
+    display: block;
+    
+    text-align: center;
+
+    width: 150;
+
+    background: #6E85B6;
+    border-radius: 100px;
+}
+
+.space{
+    margin-bottom: 100px;
+
+
 }
