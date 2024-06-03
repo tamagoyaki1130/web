@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>독수리 친구</title>
+        <link href="menu.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
+        <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
+    </head>
+    <body>
+        <!-- 메뉴 -->
+        <div class="menu_div">
+            <div class="menu_logo_N_text text_plain">
+                <img class="menu_logo" src="bird.png"> 
+                <a class="menu_text text_plain" href="">독수리 둥지</a>
+            </div>
+            <a class="menu_text text_plain" href="">독수리 친구</a>
+            <a class="menu_text text_plain" href="">연세대 심리상담센터</a>
+            <a class="menu_text text_plain" href="">User</a>
+        </div>
+        
+    <!-- -----메인 화면 구성----- -->
+        <!-- output -->
+        <form name="user_input" method="get">
+            <textarea id="AIOutput" class="text_plain" rows="5" cols="100" readonly></textarea>
+        </form>
+
+        <!-- 이미지 -->
+        <img class="character" src="bird.png" width="230">
+
+        <!-- input -->
+        <div>
+            <form id="UserInputBox" name="user_input" method="post">
+                <textarea id="UserInput" class="text_plain" rows="5" cols="100" placeholder="하고 싶었지만 할 수 없었던 나만의 이야기는?"></textarea>
+                <button type="button" id="sendData" onclick="send_input(0)">
+                    <img class="send_button" src="send_button.png" alt="Send" width="40">
+                </button>
+            </form>
+
+            <form class = "grid" action = "/bird_friend" method="post">
+                <center>
+                    {% if name %}
+                    <h3> {{name}} </h3>
+                    {% endif %}
+                </center>
+                <textarea id="UserInput" class="text_plain" rows="5" cols="100" placeholder="하고 싶었지만 할 수 없었던 나만의 이야기는?"></textarea>
+                <button type="button" id="sendData" onclick="send_input(0)">
+                    <img class="send_button" src="send_button.png" alt="Send" width="40">
+                </button>
+                <label for = "Name"> Enter name: </label>
+                <input type="text" name="name" id="name"
+                <center> <input type="submit" class = "file_submit"> </center>
+            </form>
+        </div>
+    
+
+        <script>
+            function send_input(){
+                const userInput = document.getElementById('UserInput').value;
+                const InputBox = document.getElementById('UserInput');
+                InputBox.style.display = "block";
+                const data = { message: userInput,};
+
+                fetch('/process_user_input', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+                })
+
+                .then(response => response.json())
+                .then(data => {
+                    // AI의 출력을 textarea에 추가
+                    document.getElementById('AIOutput').value += data.output + '\n';
+                })
+                .catch(error => console.error('Error:', error));
+
+
+            }
+
+            
+        </script>
+        
+    </body>
+
+</html>

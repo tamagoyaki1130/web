@@ -177,7 +177,7 @@ form textarea:focus{
     outline: none;
 }
 form textarea{
-    resize: none;   
+    resize: none;
 }
 
 textarea::placeholder {
@@ -192,6 +192,11 @@ textarea::placeholder {
     right: 10px;
     
   }
+
+#sendData{
+    border: none;
+    background: none; 
+}
 
 
 
