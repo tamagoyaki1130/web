@@ -210,37 +210,45 @@ textarea::placeholder {
 
 #left_info{
     background-color: #ECF5FE;
-    width:30%;
+    width:32%;
+    padding-top: 30;
     padding-left: 15%;
     padding-right: 5%;
+    padding-bottom: 20;
+    float: left;
 }
 
 #right_info{
+
     width:30%;
-    padding-left: 15%;
-    padding-right: 5%;
+    padding-right: 10%;
+    float: right;
+}
+
+.map{
+    width: 80%;
 }
 
 .Yinfo-main-title{
-    font: normal normal bold 24px Hancom Gothic;
-    font-weight: bold;
-    color: #8B8B8B;
-    margin-bottom: 20px;
-}
-
-.Yinfo-title{
-    font: normal normal bold 14px Hancom Gothic;
+    font: normal normal bold 20px Hancom Gothic;
     font-weight: bold;
     color: #8B8B8B;
     margin-bottom: 10px;
 }
 
-.Yinfo-text{
+.Yinfo-title{
     font: normal normal bold 13px Hancom Gothic;
+    font-weight: bold;
+    color: #8B8B8B;
+    margin-bottom: 5px;
+}
+
+.Yinfo-text{
+    font: normal normal bold 12px Hancom Gothic;
     font-weight: normal;
     color: #8B8B8B;
     margin-top: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 .button2{
@@ -249,6 +257,10 @@ textarea::placeholder {
     text-decoration: none;
     padding: 15px 8px 15px 8px;
     display: block;
+    float: right;
+    margin-right: 7%;
+    margin-top: 5;
+    margin-bottom: 10;
     
     text-align: center;
 
@@ -263,3 +275,4 @@ textarea::placeholder {
 
 
 }
+
