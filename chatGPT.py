@@ -27,9 +27,13 @@ def AI(user_input):
     ]
     )
     return completion.choices[0].message.content
+    # reutrn render_template('AI_friend.html',message = completion.choices[0].message.content)
+
+# user_input = input('User:')
+# print(AI(user_input))
 
 
-#website에 값 받고 출력하기
+# website에 값 받고 출력하기
 
 app = Flask(__name__)
 
@@ -37,7 +41,7 @@ app = Flask(__name__)
 
 @app.route('/bird_friend')
 def bird_friend():
-    return render_template('index.html')
+    return render_template('AI_friend.html')
 
 @app.route("/result", methods =['POST', 'GET'])
 def result():
