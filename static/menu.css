@@ -215,6 +215,12 @@ textarea::placeholder {
     padding-right: 5%;
 }
 
+#right_info{
+    width:30%;
+    padding-left: 15%;
+    padding-right: 5%;
+}
+
 .Yinfo-main-title{
     font: normal normal bold 24px Hancom Gothic;
     font-weight: bold;
