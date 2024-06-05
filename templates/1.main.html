@@ -9,11 +9,11 @@
         <div class="menu_div">
             <div class="menu_logo_N_text text_plain">
                 <img class="menu_logo" src="../static/bird.png"> 
-                <a class="menu_text text_plain" href="">독수리 둥지</a>
+                <a onclick="main_page()" class="menu_text text_plain">독수리 둥지</a>
             </div>
-            <a class="menu_text text_plain" href="">독수리 친구</a>
-            <a class="menu_text text_plain" href="https://counsel.yonsei.ac.kr/ysclinic/index.do">연세대 심리상담센터</a>
-            <a class="menu_text text_plain" href="">User</a>
+            <a onclick="AI__friend_page()" class="menu_text text_plain">독수리 친구</a>
+            <a onclick="yonsei_page()" class="menu_text text_plain">연세대 심리상담센터</a>
+            <a class="menu_text text_plain">User</a>
         </div>
 
         <!-- 제목, 구름 -->
@@ -36,6 +36,18 @@
         <a class="button" style="margin-top: 20;" href="">지금 시작하기</a>
         <p style="margin-bottom: 170px;"></p>
 
+
+        <script>
+            function main_page() {
+                location.href = '1.main.html';
+            }
+            function AI__friend_page() {
+                location.href = '2.AI_friend.html';
+            }
+            function yonsei_page() {
+                location.href = '3.yonsei.html';
+            }
+        </script>
     </body>
 
 </html>

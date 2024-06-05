@@ -10,11 +10,11 @@
         <div class="menu_div">
             <div class="menu_logo_N_text text_plain">
                 <img class="menu_logo" src="../static/bird.png"> 
-                <a class="menu_text text_plain" href="">독수리 둥지</a>
+                <a onclick="main_page()" class="menu_text text_plain">독수리 둥지</a>
             </div>
-            <a class="menu_text text_plain" href="">독수리 친구</a>
-            <a class="menu_text text_plain" href="">연세대 심리상담센터</a>
-            <a class="menu_text text_plain" href="">User</a>
+            <a onclick="AI__friend_page()" class="menu_text text_plain">독수리 친구</a>
+            <a onclick="yonsei_page()" class="menu_text text_plain">연세대 심리상담센터</a>
+            <a class="menu_text text_plain">User</a>
         </div>
         
     <!-- -----메인 화면 구성----- -->
@@ -30,54 +30,29 @@
         <div>
             <form id="UserInputBox" name="user_input" method="post">
                 <textarea id="UserInput" class="text_plain" rows="5" cols="100" placeholder="하고 싶었지만 할 수 없었던 나만의 이야기는?"></textarea>
-                <button type="button" id="sendData" onclick="send_input(0)">
+                <button type="button" id="sendData" onclick="sendInput()">
                     <img class="send_button" src="../static/send_button.png" alt="Send" width="40">
                 </button>
-            </form>
-
-            <form class = "grid" action = "/bird_friend" method="post">
-                <center>
-                    {% if name %}
-                    <h3> {{name}} </h3>
-                    {% endif %}
-                </center>
-                <textarea id="UserInput" class="text_plain" rows="5" cols="100" placeholder="하고 싶었지만 할 수 없었던 나만의 이야기는?"></textarea>
-                <button type="button" id="sendData" onclick="send_input(0)">
-                    <img class="send_button" src="../static/send_button.png" alt="Send" width="40">
-                </button>
-                <label for = "Name"> Enter name: </label>
-                <input type="text" name="name" id="name"
-                <center> <input type="submit" class = "file_submit"> </center>
             </form>
         </div>
-    
 
         <script>
-            function send_input(){
+            async function sendInput() {
                 const userInput = document.getElementById('UserInput').value;
-                const InputBox = document.getElementById('UserInput');
-                InputBox.style.display = "block";
-                const data = { message: userInput,};
-
-                fetch('/process_user_input', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-                })
-
-                .then(response => response.json())
-                .then(data => {
-                    // AI의 출력을 textarea에 추가
-                    document.getElementById('AIOutput').value += data.output + '\n';
-                })
-                .catch(error => console.error('Error:', error));
-
-
+                
+                const response = await fetch('/process', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        'user_input': userInput
+                    })
+                });
+                
+                const data = await response.json();
+                document.getElementById('AIOutput').value = data.ai_response;
             }
-
-            
         </script>
         
     </body>

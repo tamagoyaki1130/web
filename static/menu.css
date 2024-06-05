@@ -190,14 +190,7 @@ textarea::placeholder {
     position: relative; /* 절대 위치 설정 */
     bottom: 10px;
     right: 10px;
-    
   }
-
-#sendData{
-    border: none;
-    background: none; 
-}
-
 
 
 /* 캐릭터 */

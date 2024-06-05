@@ -2,10 +2,11 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv, find_dotenv
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 #ChatGPT 사용 코드. -> AI(user_input)하면 답변 return 함. 
-_=load_dotenv(find_dotenv())
+load_dotenv(find_dotenv())
+
 client = OpenAI(
     api_key=os.environ.get('OPENAI_API_KEY'),
 )
@@ -18,16 +19,15 @@ system_message = """
 """
 def AI(user_input):
     completion = client.chat.completions.create(
-    model="gpt-3.5-turbo",
-    temperature = 1.0,
-    max_tokens = 500,
-    messages=[
-        {"role": "system", "content": system_message},
-        {"role": "user", "content": user_input}
-    ]
+        model="gpt-3.5-turbo",
+        temperature = 1.0,
+        max_tokens = 500,
+        messages=[
+            {"role": "system", "content": system_message},
+            {"role": "user", "content": user_input}
+        ]
     )
     return completion.choices[0].message.content
-    # reutrn render_template('AI_friend.html',message = completion.choices[0].message.content)
 
 # user_input = input('User:')
 # print(AI(user_input))
@@ -38,16 +38,17 @@ def AI(user_input):
 app = Flask(__name__)
 
 @app.route('/')
+def index():
+    return render_template('2.AI_friend.html')
 
-@app.route('/bird_friend')
-def bird_friend():
-    return render_template('AI_friend.html')
-
-@app.route("/result", methods =['POST', 'GET'])
-def result():
-    output = request.form.to_dict()
-    name = output["name"]
-    return render_template('index.html', name=name)
+@app.route('/process', methods=['POST'])
+def process():
+    user_input = request.form['user_input']
+    ai_response = AI(user_input)
+    return jsonify({'ai_response': ai_response})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True)
+
+    #user_input, AIOutput
+    #button id = sendData / textarea id = UserInput
