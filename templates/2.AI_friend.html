@@ -3,7 +3,7 @@
         <title>독수리 친구</title>
         <link href="../static/menu.css" rel="stylesheet"/>
         <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
-        <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     </head>
     <body>
         <!-- 메뉴 -->
@@ -30,31 +30,29 @@
         <div>
             <form id="UserInputBox" name="user_input" method="post">
                 <textarea id="UserInput" class="text_plain" rows="5" cols="100" placeholder="하고 싶었지만 할 수 없었던 나만의 이야기는?"></textarea>
-                <button type="button" id="sendData" onclick="sendInput()">
+                <button type="button" id="sendData">
                     <img class="send_button" src="../static/send_button.png" alt="Send" width="40">
                 </button>
             </form>
         </div>
 
-        <script>
-            async function sendInput() {
-                const userInput = document.getElementById('UserInput').value;
-                
-                const response = await fetch('/process', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: new URLSearchParams({
-                        'user_input': userInput
-                    })
-                });
-                
-                const data = await response.json();
-                document.getElementById('AIOutput').value = data.ai_response;
-            }
-        </script>
-        
-    </body>
+        <py-env>
+            - ./scripts/chatGPT.py
+            - openai
+            - python-dotenv
+        </py-env>
 
+        <py-script>
+            from chatGPT import AI
+            from js import document
+
+            def sendInput(event):
+                user_input = document.getElementById("UserInput").value
+                ai = AI(user_input)
+                document.getElementById("AIOutput").value = str(ai)
+
+            document.getElementById("sendData").addEventListener("click", sendInput)
+        </py-script>
+
+    </body>
 </html>
