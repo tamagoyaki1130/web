@@ -20,6 +20,9 @@
     <!-- -----메인 화면 구성----- -->
         <!-- output -->
         <form name="user_input" method="get">
+            {% if answer%}
+                <p>{{answer}}</p>
+            {% endif %}
             <textarea id="AIOutput" class="text_plain" rows="5" cols="100" readonly></textarea>
         </form>
 
@@ -28,16 +31,16 @@
 
         <!-- input -->
         <div>
-            <form id="UserInputBox" name="user_input" method="post">
-                <textarea id="UserInput" class="text_plain" rows="5" cols="100" placeholder="하고 싶었지만 할 수 없었던 나만의 이야기는?"></textarea>
-                <button type="button" id="sendData">
+            <form action="/get_response" id="UserInputBox" name="user_input" method="post">
+                <textarea name="query" id="UserInput" class="text_plain" rows="5" cols="100" placeholder="하고 싶었지만 할 수 없었던 나만의 이야기는?"></textarea>
+                <button type="submit" id="sendData">
                     <img class="send_button" src="../static/send_button.png" alt="Send" width="40">
                 </button>
             </form>
         </div>
 
         <py-env>
-            - ./scripts/chatGPT.py
+            - ../scripts/chatGPT.py
             - openai
             - python-dotenv
         </py-env>
@@ -46,13 +49,14 @@
             from chatGPT import AI
             from js import document
 
+            ai_instance = AI()
+
             def sendInput(event):
                 user_input = document.getElementById("UserInput").value
-                ai = AI(user_input)
-                document.getElementById("AIOutput").value = str(ai)
+                response = ai_instance.get_response(user_input)
+                document.getElementById("AIOutput").value = response
 
             document.getElementById("sendData").addEventListener("click", sendInput)
         </py-script>
-
     </body>
 </html>
