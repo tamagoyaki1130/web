@@ -102,7 +102,5 @@ def get_response():
 def main():
     return render_template('2.AI_friend.html')
 
-
-
 if __name__ == '__main__':
     app.run(debug=True)
