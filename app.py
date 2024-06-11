@@ -5,20 +5,26 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('main,html')
+    return render_template('main.html')
 
-@app.route('/signup')
+@app.route('/signup', methods=['Get','POST'])
 def signup():
-    return render_template('sign_in.html')
-
-@app.route('/login')
-def signup():
-    return render_template('login.html')
-
-@app.route('/')
-def index():
-    return render_template('find_password.html')
-
+    if request.method =="POST":
+        name = request.form['name']
+        password = request.form['password']
+        email = request.form['email']
+        
+        # データベースへの接続と挿入処理
+        conn = sqlite3.connect('static/login.db')
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO my_table (name, password, email) VALUES (?, ?, ?)", (name, password, email))
+        conn.commit()
+        conn.close()
+        
+        # return '회원가입이 되었습니다'
+        return redirect('login')
+    else:
+        return render_template('sign_in.html')
 @app.route('/find_password', methods=['Get','POST'])
 def find_password():
     if request.method =="POST":
@@ -39,7 +45,6 @@ def find_password():
     else:
         return render_template('login.html')
 
-
 @app.route('/login', methods=['Get','POST'])
 def login():
     if request.method =="POST":
@@ -53,27 +58,11 @@ def login():
         conn.close()
         
         if user:
-            return "로그인 되었습니다."
+            return render_template('main.html')
         else:
             return "Please check your username and password."
     else:
         return render_template('login.html')
-    
-@app.route('/submit', methods=['POST'])
-def submit():
-    name = request.form['name']
-    password = request.form['password']
-    email = request.form['email']
-    
-    # データベースへの接続と挿入処理
-    conn = sqlite3.connect('static/login.db')
-    cursor = conn.cursor()
-    cursor.execute("INSERT INTO my_table (name, password, email) VALUES (?, ?, ?)", (name, password, email))
-    conn.commit()
-    conn.close()
-    
-    return '회원가입이 되었습니다'
-
 
 
 @app.route('/get_response', method=["POST"])
