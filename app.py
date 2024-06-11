@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, redirect
 import sqlite3
+from chatGPT import *
 
 app = Flask(__name__)
 
@@ -69,11 +70,19 @@ def login():
 
 @app.route('/get_response', methods=["POST"])
 def get_response():
-    query = request.form["user_input"] 
+    user_input = request.form["user_input"] 
+    system_message = """
+            You are a psychological counselor. 
+            You need to empathize with the emotions of the person you are talking to. 
+            Also, make the person you are talking to talk more specifically about their situation and emotions. 
+            Do not say that you are a robot.
+            Ask only 1 question at a time.
+        """
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         temperature=1.0,
         max_tokens=500,
+        
         messages=[
             {"role": "system", "content": system_message},
             {"role": "user", "content": user_input}
