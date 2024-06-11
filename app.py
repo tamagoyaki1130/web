@@ -67,9 +67,9 @@ def login():
 
 
 
-@app.route('/get_response', method=["POST"])
+@app.route('/get_response', methods=["POST"])
 def get_response():
-    query = request.form["query"]
+    query = request.form["user_input"] 
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         temperature=1.0,
@@ -84,7 +84,7 @@ def get_response():
 
     return render_template('2.AI_friend.html',answer=answer)
 
-@app.route('/main', method =["GET","POST"])
+@app.route('/main', methods =["GET","POST"])
 def main():
     return render_template('2.AI_friend.html')
 
