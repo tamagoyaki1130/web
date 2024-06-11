@@ -74,5 +74,30 @@ def submit():
     
     return '회원가입이 되었습니다'
 
+
+
+@app.route('/get_response', method=["POST"])
+def get_response(self, user_input):
+    query = request.form["query"]
+    completion = self.client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        temperature=1.0,
+        max_tokens=500,
+        messages=[
+            {"role": "system", "content": self.system_message},
+            {"role": "user", "content": user_input}
+        ]
+    )
+    answer = completion.choices[0].message.content
+    # return completion.choices[0].message.content
+
+    return render_template('2.AI_friend.html',answer=answer)
+
+@app.route('/main', method =["GET","POST"])
+def main():
+    return render_template('2.AI_friend.html')
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
