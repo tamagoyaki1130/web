@@ -22,7 +22,7 @@ def signup():
         conn.close()
         
         # return '회원가입이 되었습니다'
-        return redirect('login')
+        return render_template('login')
     else:
         return render_template('sign_in.html')
 @app.route('/find_password', methods=['Get','POST'])
@@ -63,6 +63,7 @@ def login():
             return "Please check your username and password."
     else:
         return render_template('login.html')
+
 
 
 @app.route('/get_response', method=["POST"])
