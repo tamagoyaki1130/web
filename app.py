@@ -24,8 +24,8 @@ def signup():
         # return '회원가입이 되었습니다'
         return redirect('login')
     else:
-        return render_template('sing_in.html')
-    
+        return render_template('sign_in.html')
+       
 @app.route('/find_password', methods=['Get','POST'])
 def find_password():
     if request.method =="POST":
