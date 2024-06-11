@@ -1,12 +1,15 @@
 from flask import Flask, request, render_template, redirect
 import sqlite3
-from chatGPT import *
+import os
+from openai import OpenAI
+from dotenv import load_dotenv, find_dotenv
+
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('main.html')
+    return render_template('1.main.html')
 
 @app.route('/signup', methods=['Get','POST'])
 def signup():
@@ -60,7 +63,7 @@ def login():
         conn.close()
         
         if user:
-            return render_template('main.html')
+            return render_template('1.main.html')
         else:
             return "Please check your username and password."
     else:
@@ -70,7 +73,9 @@ def login():
 
 @app.route('/get_response', methods=["POST"])
 def get_response():
-    user_input = request.form["user_input"] 
+    query = request.form["query"] 
+    load_dotenv(find_dotenv())
+    client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
     system_message = """
             You are a psychological counselor. 
             You need to empathize with the emotions of the person you are talking to. 
@@ -85,7 +90,7 @@ def get_response():
         
         messages=[
             {"role": "system", "content": system_message},
-            {"role": "user", "content": user_input}
+            {"role": "user", "content": query}
         ]
     )
     answer = completion.choices[0].message.content
