@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect
 import sqlite3
 
 app = Flask(__name__)
@@ -22,7 +22,7 @@ def signup():
         conn.close()
         
         # return '회원가입이 되었습니다'
-        return redirect('login.html')
+        return redirect('login')
     else:
         return render_template('sign_in.html')
     
