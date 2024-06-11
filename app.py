@@ -38,7 +38,7 @@ def find_password():
         
         conn = sqlite3.connect('static/login.db')
         c = conn.cursor()
-        c.execute("SELECT password FROM users WHERE name=? AND email=?", (name, email))
+        c.execute("SELECT password FROM my_table WHERE name=? AND email=?", (name, email))
         user = c.fetchone()
         conn.close()
         
@@ -58,13 +58,12 @@ def login():
         
         conn = sqlite3.connect('static/login.db')
         c = conn.cursor()
-        c.execute("SELECT * FROM users WHERE name=? AND password=?", (name, password))
+        c.execute("SELECT * FROM my_table WHERE name=? AND password=?", (name, password))
         user = c.fetchone()
         conn.close()
         
         if user:
-            # return render_template('1.main.html')
-            return '로그인 되었습니다'
+            return 'login'
         else:
             return "Please check your username and password."
     else:
