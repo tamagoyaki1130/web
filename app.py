@@ -11,7 +11,7 @@ app = Flask(__name__)
 def index():
     return render_template('1.main.html')
 
-@app.route('/signup', methods=['Get','POST'])
+@app.route('/signup', methods=['GET','POST'])
 def signup():
     if request.method =="POST":
         name = request.form['name']
@@ -63,7 +63,8 @@ def login():
         conn.close()
         
         if user:
-            return render_template('1.main.html')
+            # return render_template('1.main.html')
+            return '로그인 되었습니다'
         else:
             return "Please check your username and password."
     else:
