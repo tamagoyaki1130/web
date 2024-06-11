@@ -22,9 +22,10 @@ def signup():
         conn.close()
         
         # return '회원가입이 되었습니다'
-        return render_template('login')
+        return redirect('login.html')
     else:
         return render_template('sign_in.html')
+    
 @app.route('/find_password', methods=['Get','POST'])
 def find_password():
     if request.method =="POST":
