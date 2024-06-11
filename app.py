@@ -89,6 +89,7 @@ def get_response(self, user_input):
         ]
     )
     answer = completion.choices[0].message.content
+    # return completion.choices[0].message.content
 
     return render_template('2.AI_friend.html',answer=answer)
 
