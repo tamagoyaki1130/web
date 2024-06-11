@@ -2,8 +2,6 @@
     <head>
         <title>독수리 친구</title>
         <link href="../static/menu.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.5.2/core.css">
-        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     </head>
     <body>
         <!-- 메뉴 -->
@@ -38,25 +36,5 @@
                 </button>
             </form>
         </div>
-
-        <py-env>
-            - ../scripts/chatGPT.py
-            - openai
-            - python-dotenv
-        </py-env>
-
-        <py-script>
-            from chatGPT import AI
-            from js import document
-
-            ai_instance = AI()
-
-            def sendInput(event):
-                user_input = document.getElementById("UserInput").value
-                response = ai_instance.get_response(user_input)
-                document.getElementById("AIOutput").value = response
-
-            document.getElementById("sendData").addEventListener("click", sendInput)
-        </py-script>
     </body>
 </html>
