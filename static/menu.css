@@ -112,24 +112,25 @@ body{
 
 #AIOutput{
     font-size: 13px;
-    width: 650px; 
-    height: 150px;
+    width: 600px; 
+    height: 130px;
     margin:auto;
     display: block;
 
-    background: #FFFFFF;
+    background: #ffffff;
     border: 3px solid #6E85B6;
-    border-radius: 20px;
+    border-radius: 100px;
     
     padding-left: 40px;
     padding-top: 35px;
+    padding-right: 40px;
 }
 
 /* input 상자 */
 #UserInputBox{
     font-size: 13px;
-    width: 600px; 
-    height: 150px;
+    width: 500px; 
+    height: 160px;
     margin:auto;
 
     position: relative;
@@ -139,10 +140,11 @@ body{
 
     background: #FFFFFF;
     border: 3px solid #6E85B6;
-    border-radius: 20px;
+    border-radius: 30px;
     
-    padding: 40px 40px;
-    padding-top: 35px;
+    padding: 60px 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
 
 }
@@ -162,14 +164,11 @@ body{
     overflow:visible;
     overflow-y: scroll;
 
-    padding: 40px 40px;
-    padding-top: 35px;
-
 
 }
 
 
-.scroll::-webkit-scrollbar {
+.text_plain::-webkit-scrollbar {
     display: none;
   }
 

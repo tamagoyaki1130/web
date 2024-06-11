@@ -17,21 +17,23 @@
         
     <!-- -----메인 화면 구성----- -->
         <!-- output -->
-        <form name="user_input" method="get">
+
+        <form name="user_input" method="get" style="margin-top: 98;">
+            <textarea id="AIOutput" class="text_plain" rows="5" cols="100" readonly>
             {% if answer%}
-                <p>{{answer}}</p>
+                {{answer}}
             {% endif %}
-            <textarea id="AIOutput" class="text_plain" rows="5" cols="100" readonly></textarea>
+            </textarea>
         </form>
 
         <!-- 이미지 -->
-        <img class="character" src="../static/bird.png" width="230">
+        <img class="character" src="../static/bird.png" width="180" style="margin-bottom: 30; margin-top: 10;">
 
         <!-- input -->
         <div>
             <form action="/get_response" id="UserInputBox" name="user_input" method="post">
                 <textarea name="query" id="UserInput" class="text_plain" rows="5" cols="100" placeholder="하고 싶었지만 할 수 없었던 나만의 이야기는?"></textarea>
-                <button type="submit" id="sendData">
+                <button type="submit" id="sendData" style="border: none; background-color: white;">
                     <img class="send_button" src="../static/send_button.png" alt="Send" width="40">
                 </button>
             </form>
