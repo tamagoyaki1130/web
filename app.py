@@ -68,14 +68,14 @@ def login():
 
 
 @app.route('/get_response', method=["POST"])
-def get_response(self, user_input):
+def get_response():
     query = request.form["query"]
-    completion = self.client.chat.completions.create(
+    completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         temperature=1.0,
         max_tokens=500,
         messages=[
-            {"role": "system", "content": self.system_message},
+            {"role": "system", "content": system_message},
             {"role": "user", "content": user_input}
         ]
     )
