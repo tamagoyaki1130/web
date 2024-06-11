@@ -36,7 +36,7 @@ def find_password():
         name = request.form['name']
         email = request.form['email']
         
-        conn = sqlite3.connect('login.db')
+        conn = sqlite3.connect('static/login.db')
         c = conn.cursor()
         c.execute("SELECT password FROM users WHERE name=? AND email=?", (name, email))
         user = c.fetchone()
@@ -56,7 +56,7 @@ def login():
         name = request.form['name']
         password = request.form['password']
         
-        conn = sqlite3.connect('login.db')
+        conn = sqlite3.connect('static/login.db')
         c = conn.cursor()
         c.execute("SELECT * FROM users WHERE name=? AND password=?", (name, password))
         user = c.fetchone()
