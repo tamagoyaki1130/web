@@ -13,7 +13,7 @@
             </div>
             <a onclick="AI__friend_page()" class="menu_text text_plain">독수리 친구</a>
             <a onclick="yonsei_page()" class="menu_text text_plain">연세대 심리상담센터</a>
-            <a class="menu_text text_plain">User</a>
+            <a onclick="user_page()" class="menu_text text_plain">User</a>
         </div>
 
         <!-- 제목, 구름 -->
@@ -33,7 +33,7 @@
             <p>당신을 위한 AI 친구와 한 번 대화해보시겠어요? </p>
         </div>
 
-        <a class="button" style="margin-top: 20;" href="">지금 시작하기</a>
+        <a class="button" style="margin-top: 20;" onclick="AI__friend_page()">지금 시작하기</a>
         <p style="margin-bottom: 170px;"></p>
 
         
@@ -46,6 +46,9 @@
             }
             function yonsei_page() {
                 location.href = '3.yonsei.html';
+            }
+            function user_page() {
+                location.href = 'login.html';
             }
         </script>
     </body>

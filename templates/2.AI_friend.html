@@ -12,7 +12,7 @@
             </div>
             <a onclick="AI__friend_page()" class="menu_text text_plain">독수리 친구</a>
             <a onclick="yonsei_page()" class="menu_text text_plain">연세대 심리상담센터</a>
-            <a class="menu_text text_plain">User</a>
+            <a onclick="user_page()" class="menu_text text_plain">User</a>
         </div>
         
     <!-- -----메인 화면 구성----- -->
@@ -36,5 +36,22 @@
                 </button>
             </form>
         </div>
+
+
+        <script>
+            function main_page() {
+                location.href = '1.main.html';
+            }
+            function AI__friend_page() {
+                location.href = '2.AI_friend.html';
+            }
+            function yonsei_page() {
+                location.href = '3.yonsei.html';
+            }
+            function user_page() {
+                location.href = 'login.html';
+            }
+        </script>
+
     </body>
 </html>
