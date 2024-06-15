@@ -11,7 +11,7 @@ app = Flask(__name__)
 def index():
     return render_template('1.main.html')
 
-@app.route('/signup', methods=['Get','POST'])
+@app.route('/signup', methods=['GET','POST'])
 def signup():
     if request.method =="POST":
         name = request.form['name']
@@ -38,7 +38,7 @@ def find_password():
         
         conn = sqlite3.connect('static/login.db')
         c = conn.cursor()
-        c.execute("SELECT password FROM users WHERE name=? AND email=?", (name, email))
+        c.execute("SELECT * FROM my_table WHERE name=? AND email=?", (name, email))
         user = c.fetchone()
         conn.close()
         
@@ -58,12 +58,12 @@ def login():
         
         conn = sqlite3.connect('static/login.db')
         c = conn.cursor()
-        c.execute("SELECT * FROM users WHERE name=? AND password=?", (name, password))
+        c.execute("SELECT * FROM my_table WHERE name=? AND password=?", (name, password))
         user = c.fetchone()
         conn.close()
         
         if user:
-            return render_template('1.main.html')
+            return 'login'
         else:
             return "Please check your username and password."
     else:
