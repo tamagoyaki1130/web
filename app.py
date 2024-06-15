@@ -94,12 +94,20 @@ def get_response():
         ]
     )
     answer = completion.choices[0].message.content
-    
+
     return render_template('2.AI_friend.html',answer=answer.strip())
 
 @app.route('/AI_friend', methods =["GET","POST"])
 def ai_friend():
     return render_template('2.AI_friend.html')
+
+@app.route('/yonsei_page')
+def yonsei_page():
+    return render_template('3.yonsei.html')
+
+@app.route('/user_page')
+def user_page():
+    return render_template('user.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
