@@ -19,11 +19,7 @@
         <!-- output -->
 
         <form name="user_input" method="get" style="margin-top: 98;">
-            <textarea id="AIOutput" class="text_plain" rows="5" cols="100" readonly>
-            {% if answer%}
-                {{answer}}
-            {% endif %}
-            </textarea>
+            <textarea id="AIOutput" class="text_plain2" rows="5" cols="100" style="font-size: 16;" readonly>{% if answer%}{{answer}}{% endif %}</textarea>
         </form>
 
         <!-- 이미지 -->
@@ -32,7 +28,7 @@
         <!-- input -->
         <div>
             <form action="/get_response" id="UserInputBox" name="user_input" method="post">
-                <textarea name="query" id="UserInput" class="text_plain" rows="5" cols="100" placeholder="하고 싶었지만 할 수 없었던 나만의 이야기는?"></textarea>
+                <textarea name="query" id="UserInput" class="text_plain2" rows="5" cols="100" style="font-size: 16;" placeholder="하고 싶었지만 할 수 없었던 나만의 이야기는?"></textarea>
                 <button type="submit" id="sendData" style="border: none; background-color: white;">
                     <img class="send_button" src="../static/send_button.png" alt="Send" width="40">
                 </button>
@@ -53,6 +49,8 @@
             function user_page() {
                 location.href = 'login.html';
             }
+
+            
         </script>
 
     </body>

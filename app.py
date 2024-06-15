@@ -94,9 +94,8 @@ def get_response():
         ]
     )
     answer = completion.choices[0].message.content
-    # return completion.choices[0].message.content
-
-    return render_template('2.AI_friend.html',answer=answer)
+    
+    return render_template('2.AI_friend.html',answer=answer.strip())
 
 @app.route('/AI_friend', methods =["GET","POST"])
 def ai_friend():
