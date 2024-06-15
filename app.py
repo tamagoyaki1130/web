@@ -98,8 +98,8 @@ def get_response():
 
     return render_template('2.AI_friend.html',answer=answer)
 
-@app.route('/main', methods =["GET","POST"])
-def main():
+@app.route('/AI_friend', methods =["GET","POST"])
+def ai_friend():
     return render_template('2.AI_friend.html')
 
 if __name__ == '__main__':
