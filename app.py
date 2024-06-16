@@ -109,5 +109,13 @@ def yonsei_page():
 def user_page():
     return render_template('login.html')
 
+@app.route('/find_password')
+def user_page():
+    return render_template('find_password.html')
+
+@app.route('/signup')
+def user_page():
+    return render_template('sign_in.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
