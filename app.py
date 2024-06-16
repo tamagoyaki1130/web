@@ -105,9 +105,9 @@ def ai_friend():
 def yonsei_page():
     return render_template('3.yonsei.html')
 
-@app.route('/user_page')
+@app.route('/login')
 def user_page():
-    return render_template('user.html')
+    return render_template('login.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
