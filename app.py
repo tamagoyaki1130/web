@@ -106,15 +106,15 @@ def yonsei_page():
     return render_template('3.yonsei.html')
 
 @app.route('/login')
-def user_page():
+def login_link():
     return render_template('login.html')
 
 @app.route('/find_password')
-def user_page():
+def findpass_link():
     return render_template('find_password.html')
 
 @app.route('/signup')
-def user_page():
+def signup_link():
     return render_template('sign_in.html')
 
 if __name__ == '__main__':
