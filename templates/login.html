@@ -104,14 +104,14 @@
         </div>
 
         <div class="d-flex justify-content-center mt-3">
-            <a class="password" href="{{ url_for('sing_in') }}">회원가입</a>
+            <a class="password" href="{{ url_for('signup_link') }}">회원가입</a>
             <div class="password"> | </div>
-            <a class="password" href="{{ url_for('find_password') }}">비밀번호 착기</a>
+            <a class="password" href="{{ url_for('findpass_link') }}">비밀번호 착기</a>
         </div>
     
         <!-- <p>회원가입|비밀번호 착기</p> -->
         <div class="d-flex justify-content-center">
-            <button class="white-button" herf="{{ url_for('1.main') }}">돌아가기</button>  
+            <button class="white-button" type="button" onclick="location.href='1.main.html';">돌아가기</button> 
             <button class="blue-button" type="submit">로그인</button>
         </div>
     </form>  
