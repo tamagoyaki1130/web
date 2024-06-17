@@ -38,7 +38,7 @@ def find_password():
         
         conn = sqlite3.connect('static/login.db')
         c = conn.cursor()
-        c.execute("SELECT password FROM my_table WHERE name=? AND email=?", (name, email))
+        c.execute("SELECT * FROM my_table WHERE name=? AND email=?", (name, email))
         user = c.fetchone()
         conn.close()
         
