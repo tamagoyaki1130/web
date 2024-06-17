@@ -94,13 +94,28 @@ def get_response():
         ]
     )
     answer = completion.choices[0].message.content
-    # return completion.choices[0].message.content
 
-    return render_template('2.AI_friend.html',answer=answer)
+    return render_template('2.AI_friend.html',answer=answer.strip())
 
-@app.route('/main', methods =["GET","POST"])
-def main():
+@app.route('/AI_friend', methods =["GET","POST"])
+def ai_friend():
     return render_template('2.AI_friend.html')
+
+@app.route('/yonsei_page')
+def yonsei_page():
+    return render_template('3.yonsei.html')
+
+@app.route('/login')
+def login_link():
+    return render_template('login.html')
+
+@app.route('/find_password')
+def findpass_link():
+    return render_template('find_password.html')
+
+@app.route('/signup')
+def signup_link():
+    return render_template('sign_in.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -8,22 +8,18 @@
         <div class="menu_div">
             <div class="menu_logo_N_text text_plain">
                 <img class="menu_logo" src="../static/bird.png"> 
-                <a onclick="main_page()" class="menu_text text_plain">독수리 둥지</a>
+                <a href="{{ url_for('index') }}" class="menu_text text_plain">독수리 둥지</a>
             </div>
-            <a onclick="AI__friend_page()" class="menu_text text_plain">독수리 친구</a>
-            <a onclick="yonsei_page()" class="menu_text text_plain">연세대 심리상담센터</a>
-            <a onclick="user_page()" class="menu_text text_plain">User</a>
+            <a  href="{{ url_for('ai_friend') }}" class="menu_text text_plain">독수리 친구</a>
+            <a href="{{ url_for('yonsei_page') }}" class="menu_text text_plain">연세대 심리상담센터</a>
+            <a  href="{{ url_for('login_link') }}" class="menu_text text_plain">User</a>
         </div>
         
     <!-- -----메인 화면 구성----- -->
         <!-- output -->
 
         <form name="user_input" method="get" style="margin-top: 98;">
-            <textarea id="AIOutput" class="text_plain" rows="5" cols="100" readonly>
-            {% if answer%}
-                {{answer}}
-            {% endif %}
-            </textarea>
+            <textarea id="AIOutput" class="text_plain2" rows="5" cols="100" style="font-size: 16;" readonly>{% if answer%}{{answer}}{% endif %}</textarea>
         </form>
 
         <!-- 이미지 -->
@@ -32,7 +28,7 @@
         <!-- input -->
         <div>
             <form action="/get_response" id="UserInputBox" name="user_input" method="post">
-                <textarea name="query" id="UserInput" class="text_plain" rows="5" cols="100" placeholder="하고 싶었지만 할 수 없었던 나만의 이야기는?"></textarea>
+                <textarea name="query" id="UserInput" class="text_plain2" rows="5" cols="100" style="font-size: 16;" placeholder="하고 싶었지만 할 수 없었던 나만의 이야기는?"></textarea>
                 <button type="submit" id="sendData" style="border: none; background-color: white;">
                     <img class="send_button" src="../static/send_button.png" alt="Send" width="40">
                 </button>
@@ -53,6 +49,8 @@
             function user_page() {
                 location.href = 'login.html';
             }
+
+            
         </script>
 
     </body>

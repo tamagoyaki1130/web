@@ -59,7 +59,7 @@
             /* position: absolute;
             top: 679px;
             left: 968px; */
-            margin-top: 20px;
+            margin-top: 30px;
             width: 258px;
             height: 64px;
             background: #6D85B7 0% 0% no-repeat padding-box;
@@ -76,8 +76,8 @@
             /* position:absolute;
             top: 679px;
             left: 692px; */
-            margin-top: 20px;
-            width: 260px;
+            margin-top: 30px;
+            width: 258px;
             height: 64px;
             background: #FFFFFF 0% 0% no-repeat padding-box;
             border: 1px solid #707070;
@@ -87,13 +87,14 @@
             font-weight: bold;
             border-radius: 20px;
             cursor: pointer;
+            margin-right: 10px;
         }
         
 
     </style>
 </head>
 <body>
-    <img src="../static/login2.png"></img>
+    <img style="width: 510px; margin-top: 7%;" src="../static/login2.png"></img>
     <form form action="/login" method="post">
         <div class="input-text d-flex align-item-center justify-content-center">   
             <div>
@@ -104,10 +105,17 @@
     
         <!-- <p>회원가입|비밀번호 착기</p> -->
         <div class="d-flex justify-content-center">
+<<<<<<< HEAD
             <button class="white-button" onclick="location.href='1.main.html';">돌아가기</button>  
             <button class="blue-button" type="submit" onclick="location.href='login.html';">로그인</button>
         </div>
     </form>  
+=======
+            <button class="white-button"href="{{ url_for('index') }}">돌아가기</button>  
+            <button class="blue-button" type="submit">로그인</button>
+        <div>
+    <form>  
+>>>>>>> origin/main
         
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     

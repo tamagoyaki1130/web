@@ -83,7 +83,7 @@
             top: 679px;
             left: 692px; */
             margin-top: 20px;
-            width: 260px;
+            width: 258px;
             height: 64px;
             background: #FFFFFF 0% 0% no-repeat padding-box;
             border: 1px solid #707070;
@@ -93,6 +93,7 @@
             font-weight: bold;
             border-radius: 20px;
             cursor: pointer;
+            margin-right: 10px;
         }
            
 
@@ -101,20 +102,20 @@
 </head>
 <body>
 
-    <image src="../static/membership.png"></image>
+    <image style="width: 510px; margin-top: 7%;" src="../static/membership.png"></image>
     <form action="/signup" method="post">
         <div class="input-text d-flex align-item-center justify-content-center">
             <div>
-            <input class="input-1" placeholder="     닉네임" type="text"  name="name">
-            <input class="input-2 mt-4" placeholder="     비밀번호" type="password" name="password">
-            <input class="input-3 mt-4" placeholder="     E-mail" type="text" name="email">
+            <input class="input-1" placeholder="닉네임" type="text"  name="name">
+            <input class="input-2 mt-2" placeholder="비밀번호" type="password" name="password">
+            <input class="input-3 mt-2" placeholder="E-mail" type="text" name="email">
             <div>
         </div>
     
         <div class="d-flex justify-content-center mt-3">
-            <a class="password" herf="file:///Users/tsurumi/Downloads/웹프로그래밍/프로젝트/web-3/templates/login.html">로그인</a>
-            <div class="password">|</div>
-            <a class="password" href="file:///Users/tsurumi/Downloads/웹프로그래밍/프로젝트/web-3/templates/find_password.html">비밀번호 착기</a>
+            <a class="password" href="{{ url_for('ai_friend') }}">로그인</a>
+            <div class="password"> | </div>
+            <a class="password" href="{{ url_for('ai_friend') }}">비밀번호 착기</a>
         </div>
         
         <div class="d-flex justify-content-center">
