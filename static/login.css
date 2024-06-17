@@ -1,6 +1,21 @@
 body {
     background-color: #EAF3FE;
 }
+
+.text_plain{
+    font: normal normal bold 16px Hancom Gothic;
+    color: #8B8B8B;
+    text-decoration: none;
+    font-weight: normal;
+}
+.text_bold{
+    font: normal normal bold 16px Hancom Gothic;
+    color: #8B8B8B;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
 img{
     display: block;
     position: relative;
@@ -20,40 +35,31 @@ img{
     border-radius: 41px;
     opacity: 1;
 }
-.input-1 {
+.input{
     /* position: absolute;
     top: 451px;
     margin-left: 692px; */
     width: 536px;
     height: 60px;
-    
 }
-ㄴ
-.input-2 {
-    /* position: absolute;
-    top: 531px;
-    left: 692px; */
+.input-1{
     width: 536px;
     height: 60px;
-    
 }
-
-/* p{
-    top: 607px;
-    left: 869px;
-    width: 64px;
-    height: 21px;
-    text-align: left;
-    letter-spacing: 0px;
-    color: #6F7070;
-    opacity: 1;
-} */
+.input-2{
+    width: 536px;
+    height: 60px;
+}
+.input-3{
+    width: 536px;
+    height: 60px;
+}
 
 .blue-button {
     /* position: absolute;
     top: 679px;
     left: 968px; */
-    margin-top: 20px;
+    margin-top: 30px;
     width: 258px;
     height: 64px;
     background: #6D85B7 0% 0% no-repeat padding-box;
@@ -70,8 +76,8 @@ img{
     /* position:absolute;
     top: 679px;
     left: 692px; */
-    margin-top: 20px;
-    width: 260px;
+    margin-top: 30px;
+    width: 258px;
     height: 64px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
@@ -81,4 +87,5 @@ img{
     font-weight: bold;
     border-radius: 20px;
     cursor: pointer;
+    margin-right: 10px;
 }

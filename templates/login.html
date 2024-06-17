@@ -3,95 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <style>
-        body {
-            background-color: #EAF3FE;
-        }
-        img{
-            display: block;
-            position: relative;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    
-        .input-text {
-            text-align: center;
-        }
-
-        .input-text input {
-            display: block;
-            padding-left: 30px;
-            background: #FFFFFF 0% 0% no-repeat padding-box;
-            border: 1px solid #707070;
-            border-radius: 41px;
-            opacity: 1;
-        }
-        .input-1 {
-            /* position: absolute;
-            top: 451px;
-            margin-left: 692px; */
-            width: 536px;
-            height: 60px;
-            
-        }
-
-        .input-2 {
-            /* position: absolute;
-            top: 531px;
-            left: 692px; */
-            width: 536px;
-            height: 60px;
-            
-        }
-
-        /* p{
-            top: 607px;
-            left: 869px;
-            width: 64px;
-            height: 21px;
-            text-align: left;
-            letter-spacing: 0px;
-            color: #6F7070;
-            opacity: 1;
-        } */
-        
-        .blue-button {
-            /* position: absolute;
-            top: 679px;
-            left: 968px; */
-            margin-top: 30px;
-            width: 258px;
-            height: 64px;
-            background: #6D85B7 0% 0% no-repeat padding-box;
-            opacity: 1;
-            border: none;
-            color: #FFFFFF;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .white-button {
-            /* position:absolute;
-            top: 679px;
-            left: 692px; */
-            margin-top: 30px;
-            width: 258px;
-            height: 64px;
-            background: #FFFFFF 0% 0% no-repeat padding-box;
-            border: 1px solid #707070;
-            opacity: 1;
-            color: #000000;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 20px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-        
-
-    </style>
+    <link href="../static/login.css" rel="stylesheet"/>
 </head>
 <body>
     <img style="width: 510px; margin-top: 7%;" src="../static/login2.png"></img>
@@ -104,9 +16,9 @@
         </div>
 
         <div class="d-flex justify-content-center mt-3">
-            <a class="password" href="{{ url_for('signup_link') }}">회원가입</a>
-            <div class="password"> | </div>
-            <a class="password" href="{{ url_for('findpass_link') }}">비밀번호 찾기</a>
+            <a class="password text_plain" href="{{ url_for('signup_link') }}">회원가입</a>
+            <div class="password text_bold"> | </div>
+            <a class="password text_plain" href="{{ url_for('findpass_link') }}">비밀번호 찾기</a>
         </div>
     
         <!-- <p>회원가입|비밀번호 착기</p> -->
